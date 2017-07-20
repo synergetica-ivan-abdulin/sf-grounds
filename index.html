@@ -10,6 +10,7 @@
             console.log('sf grounds');
             Sfdc.canvas(function() {
                 sr = JSON.parse('<%=signedRequestJson%>');
+                console.log(sr); console.log('<%=signedRequestJson%>');
                 Sfdc.canvas.client.autogrow(sr.client);
             });
         });
