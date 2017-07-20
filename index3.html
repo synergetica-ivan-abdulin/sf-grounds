@@ -7,10 +7,14 @@
     <script type="text/javascript" src="https://kaltura-dev-ed.my.salesforce.com/canvas/sdk/js/40.0/canvas-all.js"></script>
     <script type="text/javascript">
         $(function() {
-            console.log('index 2');
+            console.log('index 3');
             Sfdc.canvas(function() {
                 sr = JSON.parse('<%=signedRequestJson%>');
+                console.log(sr); console.log('<%=signedRequestJson%>');
                 Sfdc.canvas.client.autogrow(sr.client);
+            });
+            $('#run').click(function() {
+                eval($('#code').val());
             });
         });
     </script>
@@ -24,6 +28,9 @@
 <body>
 
 <h1>Test page</h1>
+<label for="code">Code</label>
+<textarea id="code"></textarea>
+<button id="run">Run</button>
 
 </body>
 </html>
