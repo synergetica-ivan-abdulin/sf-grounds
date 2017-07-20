@@ -8,6 +8,10 @@
     <script type="text/javascript">
         $(function() {
             console.log('sf grounds');
+            Sfdc.canvas(function() {
+                sr = JSON.parse('<%=signedRequestJson%>');
+                Sfdc.canvas.client.autogrow(sr.client);
+            });
         });
     </script>
 
